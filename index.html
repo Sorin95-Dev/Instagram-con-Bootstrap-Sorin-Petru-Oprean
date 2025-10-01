@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Instagram Feed </title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar bg-white border-bottom">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-instagram fs-2 me-2 text-dark"></i>
+      <a class="navbar-brand fw-bold" href="#">Instagram</a>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-outline-primary" id="toggleViewBtn" title="Alternar vista">
+        <i class="bi bi-grid fs-5"></i>
+      </button>
+      <input class="form-control" style="min-width:200px" type="search" placeholder="Buscar" aria-label="Buscar">
+      <!-- Botón Login -->
+      <button class="btn btn-primary" title="Login">
+        <i class="bi bi-person-circle me-1"></i> Login
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Feed -->
+<div class="container my-4" id="feed">
+  <div class="row g-4" id="feedContent">
+
+    <!-- Post 1 -->
+    <div class="col-12 post">
+      <div class="card">
+        <div class="card-header bg-white d-flex align-items-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="40" height="40" alt="Usuario">
+          <strong>Pati</strong>
+        </div>
+        <img src="https://www.shutterstock.com/image-photo/gentle-ocean-waves-sunrise-sunset-600nw-2619266511.jpg" class="card-img-top" alt="Post" onclick="toggleLikeIcon(this)">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-heart fs-4 me-3" role="button" onclick="toggleLike(this)" aria-label="Dar me gusta"></i>
+            <i class="bi bi-chat fs-4 me-3" role="button" aria-label="Comentar"></i>
+            <i class="bi bi-send fs-4" role="button" aria-label="Compartir"></i>
+            <i class="bi bi-bookmark fs-4 ms-auto" role="button" aria-label="Guardar"></i>
+          </div>
+          <p class="card-text mb-0"><strong>Pati</strong> ¡Qué lindo día! ☀️</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="col-12 post">
+      <div class="card">
+        <div class="card-header bg-white d-flex align-items-center">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle me-2" width="40" height="40" alt="Usuario">
+          <strong>Diana</strong>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0585/1106/5132/files/VC-BONBON-BG-LDP-6_600x600.jpg?v=1694436537" class="card-img-top" alt="Post" onclick="toggleLikeIcon(this)">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-heart fs-4 me-3" role="button" onclick="toggleLike(this)" aria-label="Dar me gusta"></i>
+            <i class="bi bi-chat fs-4 me-3" role="button" aria-label="Comentar"></i>
+            <i class="bi bi-send fs-4" role="button" aria-label="Compartir"></i>
+            <i class="bi bi-bookmark fs-4 ms-auto" role="button" aria-label="Guardar"></i>
+          </div>
+          <p class="card-text mb-0"><strong>Diana</strong> Disfrutando de la comida 🍔</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="col-12 post">
+      <div class="card">
+        <div class="card-header bg-white d-flex align-items-center">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" class="rounded-circle me-2" width="40" height="40" alt="Usuario">
+          <strong>Sorin</strong>
+        </div>
+        <img src="https://www.shutterstock.com/image-photo/breathtaking-view-tranquil-beach-sunset-600nw-2642647181.jpg" class="card-img-top" alt="Post" onclick="toggleLikeIcon(this)">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-heart fs-4 me-3" role="button" onclick="toggleLike(this)" aria-label="Dar me gusta"></i>
+            <i class="bi bi-chat fs-4 me-3" role="button" aria-label="Comentar"></i>
+            <i class="bi bi-send fs-4" role="button" aria-label="Compartir"></i>
+            <i class="bi bi-bookmark fs-4 ms-auto" role="button" aria-label="Guardar"></i>
+          </div>
+          <p class="card-text mb-0"><strong>Sorin</strong> Atardecer espectacular 🌅</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="col-12 post">
+      <div class="card">
+        <div class="card-header bg-white d-flex align-items-center">
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" class="rounded-circle me-2" width="40" height="40" alt="Usuario">
+          <strong>Leo</strong>
+        </div>
+        <img src="https://www.shutterstock.com/image-photo/central-park-aerial-view-manhattan-600nw-235760425.jpg" class="card-img-top" alt="Post" onclick="toggleLikeIcon(this)">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-heart fs-4 me-3" role="button" onclick="toggleLike(this)" aria-label="Dar me gusta"></i>
+            <i class="bi bi-chat fs-4 me-3" role="button" aria-label="Comentar"></i>
+            <i class="bi bi-send fs-4" role="button" aria-label="Compartir"></i>
+            <i class="bi bi-bookmark fs-4 ms-auto" role="button" aria-label="Guardar"></i>
+          </div>
+          <p class="card-text mb-0"><strong>Leo</strong> Día perfecto para salir 🚴‍♂️</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script de me gusta -->
+<script>
+  const toggleBtn = document.getElementById('toggleViewBtn');
+  const feedContent = document.getElementById('feedContent');
+
+  toggleBtn.addEventListener('click', () => {
+    const posts = feedContent.querySelectorAll('.post');
+
+    posts.forEach(post => {
+      if (post.classList.contains('col-12')) {
+        post.classList.remove('col-12');
+        post.classList.add('col-6', 'col-md-4');
+      } else {
+        post.classList.remove('col-6', 'col-md-4');
+        post.classList.add('col-12');
+      }
+    });
+
+    toggleBtn.classList.toggle('btn-primary');
+    toggleBtn.classList.toggle('btn-outline-primary');
+  });
+
+  function toggleLike(icon) {
+    if (icon.classList.contains('bi-heart')) {
+      icon.classList.remove('bi-heart');
+      icon.classList.add('bi-heart-fill', 'text-danger');
+    } else {
+      icon.classList.remove('bi-heart-fill', 'text-danger');
+      icon.classList.add('bi-heart');
+    }
+  }
+
+  function toggleLikeIcon(img) {
+    const heart = img.parentElement.querySelector('.bi-heart, .bi-heart-fill');
+    if (heart) toggleLike(heart);
+  }
+</script>
+
+</body>
+</html>
